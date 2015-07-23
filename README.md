@@ -4,7 +4,10 @@
 
 ### [Watch Slides → ](http://huangxuan.me/wepiao-edge)
 
-![qrcode](http://huangxuan.me/wepiao-edge/attach/qrcode.png)
+<img src="http://huangxuan.me/wepiao-edge/attach/qrcode.png" style="
+    width: 350px;
+    height: 350px;
+" />
 
 ### Catalog
 
