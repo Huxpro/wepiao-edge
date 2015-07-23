@@ -55,7 +55,7 @@ section.has-light-background {
 }
 
 .reveal em{
-	color: $linkColorHover;
+	color: saturate( $linkColorHover, 40% );
 }
 
 .reveal h1{

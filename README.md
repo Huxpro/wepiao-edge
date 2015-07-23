@@ -4,13 +4,14 @@
 
 ### [Watch Slides → ](http://huangxuan.me/wepiao-edge)
 
-No QRCode Now.
+![qrcode](http://huangxuan.me/wepiao-edge/attach/qrcode.png)
 
 ### Catalog
 
-- Mobile (@huxpro)
-- PC (@yulongge)
+- Mobile ([@huxpro](https://github.com/huxpro))
+- PC ([@yulongge](https://github.com/yulongge))
 
 ### Thanks
 
 [Reveal.js](http://lab.hakim.se/reveal-js)
+[草料二维码（QRCode Generator）](http://cli.im/)
