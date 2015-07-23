@@ -108,10 +108,10 @@
                 </section>
 
 <!-- pc 盖玉龙 --->
-                <section data-markdown style="text-align: left;">
+               <section data-markdown style="text-align: left;">
                     <script type="text/template">
                         <!-- 全部换成你的个人介绍和链接 -->
-                        <img src="attach/hux.jpg" class="logo" style="
+                        <img src="attach/edge/photo.jpg" class="logo" style="
                             width: 200px;
                             border-color: white;
                         "/>
@@ -133,11 +133,7 @@
                     </script>
                 </section>
 
-                <section data-markdown>
-                    <script type="text/template">
-                        ### *A pit!*
-                    </script>
-                </section>
+                
                 <section data-markdown>
                     <script type="text/template">
                         ### *IE TROUBLE!*
@@ -157,15 +153,31 @@
                         | .......| *.......*|
 
                 </section>
+                <section data-markdown>
+                    <script type="text/template">
+                        ### *Edge*
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+                        ### *Edge*
+                        - *没有历史负担* 
+                        - *更快的速度、更丰富的浏览体验*
+                        - *支持扩展程序*
+                        - *更个性化*
+                        - *更有沉浸感* 
+                        
+                    </script>
+                </section>
                  <section data-markdown>
                     <script type="text/template">
                         ### Share point
-                        - *modernizr.js*
+                        - *modernizr.js* 
                         - *polyfill/shim*
                         - *jshint.js*
                         - *Javascript library support for the browser*
-                        - *Responsive Design*
-                        - *normalize.css*
+                        - *Responsive Design* 
+                        - *normalize.css* 
                         - *hack*
                         - *HTML COMPONENT(.htc)*
 
@@ -178,11 +190,11 @@
                 </section>
                 <section data-markdown>
                     <script type="text/template">
-                        ####UA探测 VS 功能检测
+                        ####UA探测 VS 功能检测 
                         - User Agent 探测 (Sniffing)(uatools.js)
-
+                          
                           *复杂的逻辑*
-
+                          
                           *很多浏览器UA互相模仿*
 
                         - Microsoft Edge （OS10159）
@@ -199,30 +211,30 @@
                 <section data-markdown>
                     <script type="text/template">
                         ```
-                        var browser={
-                                versions:function(){
-                                       var u = navigator.userAgent, app = navigator.appVersion;
-                                       return {//移动终端浏览器版本信息
-                                            trident: u.indexOf('Trident') > -1, //IE内核
-                                            presto: u.indexOf('Presto') > -1, //opera内核
-                                            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-                                            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
-                                            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
-                                            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-                                            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
-                                            iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
-                                            iPad: u.indexOf('iPad') > -1, //是否iPad
-                                            webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
-                                        };
+                        var browser={  
+                                versions:function(){   
+                                       var u = navigator.userAgent, app = navigator.appVersion;   
+                                       return {//移动终端浏览器版本信息   
+                                            trident: u.indexOf('Trident') > -1, //IE内核  
+                                            presto: u.indexOf('Presto') > -1, //opera内核  
+                                            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核  
+                                            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核  
+                                            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端  
+                                            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端  
+                                            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器  
+                                            iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器  
+                                            iPad: u.indexOf('iPad') > -1, //是否iPad    
+                                            webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部  
+                                        };  
                                 }()
-                            }
+                            }     
                         ```
                     </script>
                 </section>
-
+ 
                 <section data-markdown>
                     <script type="text/template">
-                        #### 功能检测工具 - Modernizr
+                        #### 功能检测工具 - Modernizr 
 
                         - *比UA 监听更科学*
 
@@ -263,7 +275,7 @@
 
                             <a href="https://github.com/scottjehl/Respond/blob/master/src/respond.js">respond.js</a>
 
-                        - 比如你想让Chrome/Safari支持Pointer Event
+                        - 比如你想让Chrome/Safari支持Pointer Event 
 
                             <a href="https://github.com/Deltakosh/handjs">handjs</a>
 
@@ -284,6 +296,7 @@
                         - *检查javascript代码错误和问题的工具*
                         - *用node安装*
                         - *sublime里装jshint插件*
+                        - http://jshint.com/
                     </script>
                 </section>
 
@@ -309,7 +322,7 @@
                     </script>
                 </section>
 
-
+                
 
                 <section data-markdown>
                     <script type="text/template">
@@ -319,15 +332,11 @@
 
                  <section data-markdown>
                     <script type="text/template" style="text-align:left;">
-                        - Meta标签
-                        ```javascript
+                        - *Meta标签*
+                        ```html
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         ```
-                        - 对IE8或者更早的浏览器
-
-                        - *media-queries.js*
-
-                        - *respond.js*
+                        - *对IE8或者更早的浏览器media-queries.js respond.js*
 
                         - *来为 IE添加Media Query支持。*
 
@@ -335,9 +344,24 @@
                 </section>
                 <section data-markdown>
                     <script type="text/template">
-                        http://www.wepiao.com
+                    ```css
+                        @charset "UTF-8"
+
+                        @media screen and (max-width: 960px) {
+                            
+                        }
+                        @media screen and (max-width: 768px) {
+                             
+                        }
+                        @media screen and (max-width: 550px) {
+                        }
+                        @media screen and (max-width: 320px) {
+                        }
+                    ```
+                    <a href="http://www.wepiao.com">微票儿</a>
                     </script>
                 </section>
+                
 
                 <section data-markdown>
                     <script type="text/template">
@@ -350,14 +374,25 @@
                         ### *Normalize vs Reset*
 
                         - Normalize.css 保护了有价值的默认值
-
+                        <!-- .element: class="fragment" -->
+                        
                         - Normalize.css 修复了浏览器的bug
+                        <!-- .element: class="fragment" -->
 
                         - Normalize.css 不会让你的调试工具变的杂乱
+                        <!-- .element: class="fragment" -->
 
                         - Normalize.css 是模块化的
+                        <!-- .element: class="fragment" -->
 
                         - Normalize.css 拥有详细的文档
+                        <!-- .element: class="fragment" -->
+
+                        ##### *CSS Reset 是革命党*
+                        <!-- .element: class="fragment" -->    
+
+                        ##### *Normalize.css 是改良派*
+                        <!-- .element: class="fragment" -->
 
                     </script>
                 </section>
@@ -365,6 +400,9 @@
                 <section data-markdown>
                     <script type="text/template">
                         ### *HACK*
+
+                        ##### *不得不出手时*
+                        <!-- .element: class="fragment" -->
                     </script>
                 </section>
                 <section data-markdown>
@@ -376,12 +414,20 @@
                 <section data-markdown>
                     <script type="text/template">
                         ### *HTML COMPONENT(.htc)*
+
+                        http://css3pie.com/
                     </script>
                 </section>
 
                 <section data-markdown>
                     <script type="text/template">
-                        http://css3pie.com/
+                        ## *modern.ie*
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## *caniuse.com*
                     </script>
                 </section>
 <!-- End -->
