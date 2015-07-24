@@ -58,6 +58,7 @@
                     </script>
                 </section>
 
+<!-- mobile Hux --->
                 <section data-markdown style="text-align: left;">
                     <script type="text/template">
                         <img src="attach/hux.jpg" class="logo" style="
@@ -78,14 +79,10 @@
                     </script>
                 </section>
 
-
-
-<!-- mobile Hux --->
                 <section data-markdown>
                     <script type="text/template">
                         # What is <span class="wepiao">Wepiao</span>?
-
-                        <h3> 微信电影票 </h3>
+                        #### 微票儿 = 微信电影票 + QQ 电影票 + 活动票
                     </script>
                 </section>
 
@@ -93,17 +90,349 @@
                     <script type="text/template">
                         ## Products
 
-                        | Desktop Web  | Mobile Web    | Native App   |
+                        | Desktop Web  | Mobile Web    | Webview |  Native App  |
                         | ------------ | ------------- | ------------ |
-                        | [wepiao.com](www.wepiao.com) | [wepiao.com](m.wepiao.com)  | 微票儿       |
-                        |  | 微信 Webview |  |
-                        | | QQ WebView  | |
+                        | [wepiao.com](www.wepiao.com) | [wepiao.com](m.wepiao.com) | Wechat/QQ | 微票儿 |
                     </script>
                 </section>
 
                 <section data-markdown>
                     <script type="text/template">
                         # Mobile Web
+
+                        *Modern Web*
+                        <!-- .element: class="fragment" -->
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        <h1> *CSS* <br>
+                            <small>Compatibility</small>
+                        </h1>
+
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        # user agent stylesheet
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        - `font-family`
+
+                        ```css
+                        html {
+                            font-family: sans-serif;
+                        }
+                        ```
+                        <div class="fragment">
+                        - `:focus` & `outline`
+
+                        ```
+                        button:focus {
+                            outline: 0;
+                        }
+
+                        ```
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        # Vendor Prefix
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## [Autoprefixer](https://github.com/postcss/autoprefixer)
+
+                        (PostCSS)
+
+                        <img src="attach/autoprefixer.svg" class="logo" style="width:320px;margin-bottom:-60px" />
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ### [Autoprefixer](https://github.com/postcss/autoprefixer) -  Write Pure CSS
+
+                        ```css
+                        .foo {
+                            transtion: transform 1s;
+                        }
+                        ```
+                        ```css
+                        .foo {
+                            -webkit-transition: -webkit-transform 1s;
+                                    transition: transform 1s
+                        }
+                        ```
+                        <p class="fragment">
+                            Work with *preprocessors* (Sass, LESS)
+                        </p>
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ### [Autoprefixer](https://github.com/postcss/autoprefixer) - Flexbox, Filter, etc.
+
+                        ```css
+                        .bar {
+                            display: flex;
+                        }
+                        ```
+                        ```css
+                        .bar {
+                            display: -webkit-box;
+                            display: -webkit-flex;
+                            display: -ms-flexbox;
+                            display: flex
+                        }
+                        ```
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ### [Autoprefixer](https://github.com/postcss/autoprefixer) - Only Actual Prefixes
+
+                        # [Can I Use](http://caniuse.com)
+
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ### [Autoprefixer](https://github.com/postcss/autoprefixer) - work with Build Tool
+
+                        ```javascript
+                        // work with Gulp
+                        gulp.task('autoprefixer', function () {
+                            var postcss      = require('gulp-postcss');
+                            var sourcemaps   = require('gulp-sourcemaps');
+                            var autoprefixer = require('autoprefixer-core');
+
+                            return gulp.src('./src/*.css')
+                                .pipe(sourcemaps.init())
+                                .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+                                .pipe(sourcemaps.write('.'))
+                                .pipe(gulp.dest('./dest'));
+                        });
+                        ```
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ### [Autoprefixer](https://github.com/postcss/autoprefixer) - work with Build Tool
+
+                        ```javascript
+                        // work with Webpack
+                        var autoprefixer = require('autoprefixer-core');
+
+                        module.exports = {
+                            module: {
+                                loaders: [
+                                    {
+                                        test:   /\.css$/,
+                                        loader: "style-loader!css-loader!postcss-loader"
+                                    }
+                                ]
+                            },
+                            postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ]
+                        }
+                        ```
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ### Autoprefixer
+
+                        <img src="attach/joke/2.jpg" class="logo" style="width:360px;" />
+
+                        ### [Interactive Demo](http://simevidas.jsbin.com/gufoko/quiet)
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        <h1> *JS* <br>
+                            <small>Compatibility</small>
+                        </h1>
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        # *ES6* Awesome!
+
+                        <http://dev.modern.ie/platform/status/>
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## but other browser...
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## [Babel](https://babeljs.io/) - JavaScript Compiler
+
+
+                        <img src="attach/babel-logo.png" class="logo" style="width:300px;margin:0;margin-bottom:-50px" />
+
+                        > *Use next generation JavaScript, today.*
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## ES6 Class
+
+                        ```javascript
+                        //ES5
+                        function Point(x, y){
+                          this.x = x;
+                          this.y = y;
+                        }
+                        var p1 = new Point(100, 100);
+                        ```
+
+                        ```javascript
+                        //ES6
+                        class Point{
+                          constructor(x, y){
+                            this.x = x;
+                            this.y = y;
+                          }
+                        }
+                        var p1 = new Point(100, 100);
+                        ```
+
+                        *Demo time*
+                        <!-- .element: class="fragment" -->
+
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## ES6 + React + JSX
+
+                         ```javascript
+                        var React = require("react");
+
+                        class HelloMessage extends React.Component {
+                            render() {
+                                return <div> Hello {this.props.name} </div>
+                            }
+                        }
+
+                        React.render(
+                            <HelloMessage name="ES6" />,
+                            document.body
+                        )
+                        ```
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ### Babel
+                        <img src="attach/joke/1.jpg" class="logo" style="width:360px;" />
+
+                        ### *Free to use JavaScript Next!*
+
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        # [Dev.modern.ie](http://dev.modern.ie/)
+                        # [modern.ie](https://www.modern.ie/zh-cn)
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Prefetch and Prerender
+
+                        [chrome internals](chrome://net-internals/#prerender)
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Windows Tiles
+
+                        ```
+                        <meta name="msapplication-TileColor" content="#123456"/>
+                        <meta name="msapplication-square150x150logo" content="square.png"/>
+                        ```
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ### Too much meta tags...
+
+                        ```
+                        <!-- Add to homescreen for Chrome on Android -->
+                        <meta name="mobile-web-app-capable" content="yes">
+
+                        <!-- Add to homescreen for Safari on iOS -->
+                        <meta name="apple-mobile-web-app-capable" content="yes">
+                        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+                        <meta name="apple-mobile-web-app-title" content="Lighten">
+
+                        <!-- Tile icon for Win8 (144x144 + tile color) -->
+                        <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+                        <meta name="msapplication-TileColor" content="#3372DF">
+
+                        <!-- iOS icons -->
+                        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/touch/apple-touch-icon-144x144-precomposed.png">
+                        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/touch/apple-touch-icon-114x114-precomposed.png">
+                        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/touch/apple-touch-icon-72x72-precomposed.png">
+                        <link rel="apple-touch-icon-precomposed" href="images/touch/apple-touch-icon-57x57-precomposed.png">
+
+                        <!-- Generic Icon -->
+                        <link rel="shortcut icon" href="images/touch/touch-icon-57x57.png">
+
+                        <!-- Chrome Add to Homescreen -->
+                        <link rel="shortcut icon" sizes="196x196" href="images/touch/touch-icon-196x196.png">
+
+                        ```
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## NodeJS & Jade
+
+                        ```jade
+                        doctype html
+                        html
+                            head
+                                // meta
+                                include ./pagelets/head/meta.jade
+                        ```
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        # Little Issues
+
+                        Difficult to debug on *Win10 Mobile*
                     </script>
                 </section>
 
@@ -133,7 +462,7 @@
                     </script>
                 </section>
 
-                
+
                 <section data-markdown>
                     <script type="text/template">
                         ### *IE TROUBLE!*
@@ -161,23 +490,23 @@
                 <section data-markdown>
                     <script type="text/template">
                         ### *Edge*
-                        - *没有历史负担* 
+                        - *没有历史负担*
                         - *更快的速度、更丰富的浏览体验*
                         - *支持扩展程序*
                         - *更个性化*
-                        - *更有沉浸感* 
-                        
+                        - *更有沉浸感*
+
                     </script>
                 </section>
                  <section data-markdown>
                     <script type="text/template">
                         ### Share point
-                        - *modernizr.js* 
+                        - *modernizr.js*
                         - *polyfill/shim*
                         - *jshint.js*
                         - *Javascript library support for the browser*
-                        - *Responsive Design* 
-                        - *normalize.css* 
+                        - *Responsive Design*
+                        - *normalize.css*
                         - *hack*
                         - *HTML COMPONENT(.htc)*
 
@@ -190,11 +519,11 @@
                 </section>
                 <section data-markdown>
                     <script type="text/template">
-                        ####UA探测 VS 功能检测 
+                        ####UA探测 VS 功能检测
                         - User Agent 探测 (Sniffing)(uatools.js)
-                          
+
                           *复杂的逻辑*
-                          
+
                           *很多浏览器UA互相模仿*
 
                         - Microsoft Edge （OS10159）
@@ -211,30 +540,30 @@
                 <section data-markdown>
                     <script type="text/template">
                         ```
-                        var browser={  
-                                versions:function(){   
-                                       var u = navigator.userAgent, app = navigator.appVersion;   
-                                       return {//移动终端浏览器版本信息   
-                                            trident: u.indexOf('Trident') > -1, //IE内核  
-                                            presto: u.indexOf('Presto') > -1, //opera内核  
-                                            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核  
-                                            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核  
-                                            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端  
-                                            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端  
-                                            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器  
-                                            iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器  
-                                            iPad: u.indexOf('iPad') > -1, //是否iPad    
-                                            webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部  
-                                        };  
+                        var browser={
+                                versions:function(){
+                                       var u = navigator.userAgent, app = navigator.appVersion;
+                                       return {//移动终端浏览器版本信息
+                                            trident: u.indexOf('Trident') > -1, //IE内核
+                                            presto: u.indexOf('Presto') > -1, //opera内核
+                                            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                                            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                                            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                                            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                                            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                                            iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
+                                            iPad: u.indexOf('iPad') > -1, //是否iPad
+                                            webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+                                        };
                                 }()
-                            }     
+                            }
                         ```
                     </script>
                 </section>
- 
+
                 <section data-markdown>
                     <script type="text/template">
-                        #### 功能检测工具 - Modernizr 
+                        #### 功能检测工具 - Modernizr
 
                         - *比UA 监听更科学*
 
@@ -275,7 +604,7 @@
 
                             <a href="https://github.com/scottjehl/Respond/blob/master/src/respond.js">respond.js</a>
 
-                        - 比如你想让Chrome/Safari支持Pointer Event 
+                        - 比如你想让Chrome/Safari支持Pointer Event
 
                             <a href="https://github.com/Deltakosh/handjs">handjs</a>
 
@@ -322,7 +651,7 @@
                     </script>
                 </section>
 
-                
+
 
                 <section data-markdown>
                     <script type="text/template">
@@ -348,10 +677,10 @@
                         @charset "UTF-8"
 
                         @media screen and (max-width: 960px) {
-                            
+
                         }
                         @media screen and (max-width: 768px) {
-                             
+
                         }
                         @media screen and (max-width: 550px) {
                         }
@@ -361,7 +690,7 @@
                     <a href="http://www.wepiao.com">微票儿</a>
                     </script>
                 </section>
-                
+
 
                 <section data-markdown>
                     <script type="text/template">
@@ -375,7 +704,7 @@
 
                         - Normalize.css 保护了有价值的默认值
                         <!-- .element: class="fragment" -->
-                        
+
                         - Normalize.css 修复了浏览器的bug
                         <!-- .element: class="fragment" -->
 
@@ -389,7 +718,7 @@
                         <!-- .element: class="fragment" -->
 
                         ##### *CSS Reset 是革命党*
-                        <!-- .element: class="fragment" -->    
+                        <!-- .element: class="fragment" -->
 
                         ##### *Normalize.css 是改良派*
                         <!-- .element: class="fragment" -->
