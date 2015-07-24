@@ -9,4 +9,4 @@ class Point{
 }
 var p1 = new Point(100, 100);
 
-alert(p1.x);
+console.log(p1.x);
