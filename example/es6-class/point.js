@@ -1,3 +1,6 @@
+
+'use strict';
+
 class Point{
     constructor(x,y){
         this.x = x;
@@ -6,4 +9,4 @@ class Point{
 }
 var p1 = new Point(100, 100);
 
-console.log(p1.x);
+alert(p1.x);
