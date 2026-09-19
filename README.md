@@ -2,9 +2,9 @@
 
 ## 微信电影票 Edge 兼容实践
 
-### [Watch Slides → ](http://huangxuan.me/wepiao-edge)
+### [Watch Slides → ](https://huxpro.github.io/wepiao-edge)
 
-<img src="http://huangxuan.me/wepiao-edge/attach/qrcode.png" width="350" height="350" />
+<img src="https://huxpro.github.io/wepiao-edge/attach/qrcode.png" width="350" height="350" />
 
 ### Catalog
 
